@@ -25,7 +25,7 @@ The projects start with simple JavaScript fundamentals and gradually move toward
 
 | #  | Project                 | Status |
 | -- | ----------------------- | ------ |
-| 01 | Counter App             | ⬜      |
+| 01 | Counter App             | ✅      |
 | 02 | Color Flipper           | ⬜      |
 | 03 | Digital Clock           | ⬜      |
 | 04 | Character Counter       | ⬜      |
