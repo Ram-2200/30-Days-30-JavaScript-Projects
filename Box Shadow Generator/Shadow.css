@@ -1,0 +1,124 @@
+/*javascriptpro_*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+*{
+margin:0;    
+padding:0;
+box-sizing:border-box;
+}    
+
+body{
+background:#131418;  
+font-family: 'poppins', sans-serif;
+}
+
+.container{
+position:absolute;   
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+background:white;
+border-radius:7px;
+padding:10px;
+width:340px;
+height:480px;
+}
+
+.container > input[type="color"]::-webkit-color-swatch-wrapper{
+padding:0;        
+}
+
+.container > input[type="color"]::-webkit-color-swatch{
+border:none; 
+border-radius:100%;
+}
+
+.container input[type="color"]{
+-webkit-appearance:none;
+height:35px;
+width:35px;
+border-radius:100%;
+outline:none;
+border:none;
+cursor:pointer;
+margin-top:15px;
+margin-left:15px;
+}
+
+.container input[type="color"]:nth-child(2){
+float:right;    
+margin-right:15px;
+}
+
+.container .output-box{
+height:110px;  
+width:160px;
+border-radius:7px;
+background:#0D1FE6;
+box-shadow:0px 0px 19px 0px #000000;
+margin:auto;
+margin-top:15px;
+}
+
+.container .setting-box{
+padding:1px; 
+margin-top:30px;
+}
+
+.container .setting-box div{
+height:70px;    
+width:50%;
+float:left;
+margin-top:10px;
+}
+
+.container .setting-box div p{
+text-align:center;
+position:relative;
+top:5px;
+font-size:14px;
+}
+
+.container .setting-box div input{
+margin-left:15px;  
+margin-top:15px;
+cursor:pointer;
+}
+
+.container .checkbox{
+height:40px; 
+width:130px;
+position:absolute;
+bottom:43px;
+left:50%;
+transform:translate(-50%,-50%);
+display:flex;
+align-items:center;
+justify-content:center;
+}
+
+.container .checkbox input{
+cursor:pointer;        
+}
+
+.container .checkbox span{
+padding-left:7px;  
+font-size:14px;
+}
+
+.container .code-box{
+height:40px;  
+width:100%;
+background:lightgrey;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:12px;
+position:relative;
+top:45px;
+border-radius:3px;
+}
+
+::selection{
+background:rgb(100, 149, 237,0.8); 
+color:white;
+}

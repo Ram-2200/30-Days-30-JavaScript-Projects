@@ -1,0 +1,46 @@
+<!--javascriptpro_-->
+<!DOCTYPE html>
+<html>
+
+<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="Shadow.css">
+        <title></title>
+</head>
+
+<body>
+<div class="container">
+  <input type="color" class="box-color-input" value="#0D1FE6" oninput="generateShadow()">   
+  <input type="color" class="shadow-color-input" value="#000" oninput="generateShadow()">
+  <div class="output-box"></div>
+  <div class="setting-box">
+   <div class="horizontal">
+     <p>H</p>    
+     <input type="range" class="" value="0" oninput="generateShadow()">
+   </div> 
+ <div class="vertical">
+         <p>V</p>
+         <input type="range" class="" value="0" oninput="generateShadow()">
+ </div>
+ <div class="Blur">
+         <p>Blur</p>
+         <input type="range" class="" value="19" oninput="generateShadow()">
+ </div>
+ <div class="Spread">
+         <p>Spread</p>
+         <input type="range" class="" value="0" oninput="generateShadow()">
+ </div>
+  </div>
+<div class="checkbox">
+  <input type="checkbox" name="" id="" oninput="generateShadow()"> 
+  <span>inset</span>
+</div>
+<div class="code-box">
+ <p>box-shadow:0px 0px 19px 0px #000000</p>       
+</div>
+</div>
+<script src="Shadow.js"></script>
+</body>
+
+</html>
