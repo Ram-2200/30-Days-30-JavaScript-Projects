@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"> 
+        <link rel="stylesheet" href="Currency.css">
+        <title></title>
+</head>
+
+<body>
+<div class="container">
+  <img src="exchange.png" alt="">  
+  <h3 class="app-title">Currency Converter</h3>
+  <div class="amount">
+     <h3>Enter Amount</h3> 
+     <input type="number" class="user-amount" value="1"> 
+  </div>
+  <div class="from-to">
+    <!--From-->     
+    <div class="from">
+      <h3>From</h3> 
+      <div class="from-input">
+        <div class="from-flag">
+          <img src="https://flagsapi.com/US/flat/64.png" alt="" class="">
+        </div>     
+        <input type="text" name="" id="" value="USD" readonly>
+        <i class="fa-solid fa-chevron-down"></i>
+      </div>
+      <div class="from-country-options"></div>
+    </div>
+    <!--From End-->
+    <div class="switch-btn">
+        <i class="fa-solid fa-right-left"></i>
+    </div>
+    <div class="to">
+      <h3>To</h3>
+      <div class="to-input">
+        <div class="to-flag">
+          <img src="https://flagsapi.com/IN/flat/64.png" alt="" class="">
+        </div>
+        <input type="text" name="" id="" value="INR" readonly>
+        <i class="fa-solid fa-chevron-down"></i>
+      </div>
+        <div class="to-country-options"></div>
+    </div>  
+  </div>
+  <button class="convert-btn">Get Exchange Rate</button>
+  <div class="result-box">
+     <h3 class="result">100 USD = 861.11 INR</h3>    
+  </div>
+</div>   
+<script src="country-list.js"></script>
+<script src="Currency.js"></script>
+<script>
+        
+</script>
+</body>
+
+</html>
