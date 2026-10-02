@@ -1,0 +1,159 @@
+/*Javascriptpro_*/
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&display=swap');
+*{
+margin:0; 
+padding:0;
+box-sizing:border-box;
+}  
+
+body{
+background:#CBD5DE;   
+font-family: 'Orbitron', sans-serif;
+}
+
+.wrapper{
+height:200px;  
+width:370px;
+border-radius:5px;
+position:absolute;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+background:#272E38;
+transition:all .2s;
+}
+
+.wrapper .pre-wrapper{
+height:95px;  
+width:290px;
+background:#0F1620;
+position:absolute;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+transition:all .2s;
+}
+
+.wrapper .pre-wrapper .weeks{
+height:30px;
+padding:5px;
+margin-top:2px;
+}
+
+.wrapper .pre-wrapper .weeks span{
+color:red;      
+font-size:11.3px;
+margin-left:11px;
+color:dimgrey;
+font-weight:500;
+transition:all .2s;
+}
+
+.wrapper .pre-wrapper .weeks span.curr-day{
+color:white;  
+text-shadow:0 0 2px #fff;
+font-weight:600;
+transition:all .2s;
+}
+
+.wrapper .timer{
+height:55px; 
+width:220px;
+margin-top:2px;
+margin-left:35px;
+text-align:center;
+font-weight:500;
+font-weight:600;
+}
+
+.wrapper .timer span{
+color:white;  
+margin-left:3px;
+font-size:35px;
+position:relative;
+top:3px;
+text-shadow:0 0 2px #fff;
+transition:all .2s;
+}
+
+.wrapper .fa-clock{
+position:absolute;  
+left:15px;
+bottom:23px;
+color:white;
+font-size:15px;
+text-shadow:0 0 2px #fff;
+transition:all .2s;
+}
+
+.wrapper .am-pm{
+height:25px;
+width:30px;
+color:dimgrey;
+text-align:center;
+position:absolute;
+right:9px;
+bottom:20px;
+font-size:13px;
+transition:all .2s;
+}
+
+.wrapper .am-pm h6.curr-time-period{
+color:white;  
+text-shadow:0 0 2px #fff;
+transition:all .2s;
+}
+
+.toggle-btn{
+all:unset;        
+height:25px;      
+width:25px;
+background:white;
+border-radius:100%;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:10px;
+position:absolute;
+right:20px;
+margin-top:13px;
+cursor:pointer;
+color:#272E38;
+transition:all .2s;
+}
+
+/*light mode*/
+.wrapper.light{
+background:#EBEBEB;
+transition:all .2s;
+}
+
+.wrapper.light .pre-wrapper{
+background:#DDDDDD;     
+transition:all .2s;
+}
+
+.wrapper.light .pre-wrapper .weeks span{
+color:#A9A9A9;
+transition:all .2s;
+}
+
+.wrapper.light .pre-wrapper .weeks span.curr-day{
+color:#272E38;      
+transition:all .2s;
+}
+
+.wrapper.light .timer span,.wrapper.light .fa-clock,.wrapper.light .am-pm h6.curr-time-period{
+color:#272E38;      
+transition:all .2s;
+}
+
+.wrapper.light .am-pm{
+color:#A9A9A9;     
+transition:all .2s;
+}
+
+::selection{
+background:rgb(100, 149, 237,0.8); 
+color:white;
+}
