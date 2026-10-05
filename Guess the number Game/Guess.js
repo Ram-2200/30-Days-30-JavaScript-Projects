@@ -1,71 +1,151 @@
-//Javascriptpro_
-//Dont forget to follow me on github,instagram and codepen
-let container = document.querySelector('.container');
-let userInput = document.querySelector('.container .user-input-box input');
-let guessBtn = document.querySelector('.container .user-input-box button');
-let guessLowHigh = document.querySelector('.container .guess-low-high');
-let no_of_chances = document.querySelector('.container .no-of-chances');
-let guessed_number = document.querySelector('.container  .guessed-number-are');
-let resultBox = document.querySelector('.result-box');
-let gameResult = document.querySelector('.result-box h3');
-let playAgainBtn = document.querySelector('.result-box button');
+// Guess the Number Game
 
-let guessed_number_are = [];
+// -----------------------------
+// DOM Elements
+// -----------------------------
+
+const container = document.querySelector('.container');
+const userInput = document.querySelector('.container .user-input-box input');
+const guessBtn = document.querySelector('.container .user-input-box button');
+const guessLowHigh = document.querySelector('.container .guess-low-high');
+const noOfChances = document.querySelector('.container .no-of-chances');
+const guessedNumbersDisplay = document.querySelector('.container .guessed-number-are');
+
+const resultBox = document.querySelector('.result-box');
+const gameResult = document.querySelector('.result-box h3');
+const playAgainBtn = document.querySelector('.result-box button');
+
+
+// -----------------------------
+// Game State
+// -----------------------------
+
+let guessedNumbers = [];
 let chances = 3;
-let randomNum;
+let randomNumber;
 
-let checkGuess = () => {
-        let userGuess = userInput.value;
+
+// -----------------------------
+// Generate Random Number
+// Generates a number between 1 and 20
+// -----------------------------
+
+function generateRandomNumber() {
+    randomNumber = Math.floor(Math.random() * 20) + 1;
+}
+
+
+// -----------------------------
+// Check User's Guess
+// -----------------------------
+
+function checkGuess() {
+
+    // Convert input value from string to number
+    const userGuess = Number(userInput.value);
+
+    // Validate input
+    if (!Number.isInteger(userGuess) || userGuess < 1 || userGuess > 20) {
         guessLowHigh.style.display = 'block';
-        no_of_chances.style.marginTop = '9px';
-        if (userGuess !== randomNum) {
-                chances--;
-                guessed_number_are.push(userGuess);
-                if (chances !== 0) {
-                        no_of_chances.innerHTML = `No of chances: ${chances}`;
-                } else {
-                        container.style.display = 'none';
-                        resultBox.style.display = 'block';
-                        gameResult.innerHTML = 'You lost the game! 🙁';
-                }
-                guessed_number.innerHTML = `Guessed number are: ${guessed_number_are}`;
-                if (userGuess > randomNum) {
-                        guessLowHigh.innerHTML = 'Your guess is high!';
-                } else if (userGuess < randomNum) {
-                        guessLowHigh.innerHTML = 'Your guess is Low!';
-                }
-        }
-        if (userGuess == randomNum) {
-                container.style.display = 'none';
-                resultBox.style.display = 'block';
-                gameResult.innerHTML = 'You Win the game! 🥳';
-        }
-};
+        guessLowHigh.textContent = 'Please enter a number between 1 and 20.';
+        return;
+    }
 
-//generate Random Number
-let generateRandomNumber = () => {
-        let randomNumber = Math.floor(Math.random() * 20);
-        randomNum = randomNumber;
-};
+    // Prevent duplicate guesses
+    if (guessedNumbers.includes(userGuess)) {
+        guessLowHigh.style.display = 'block';
+        guessLowHigh.textContent = 'You already guessed that number!';
+        return;
+    }
 
-guessBtn.addEventListener('click', () => {
-        if (userInput.value != '') {
-                checkGuess();
-        }
-});
+    // Store the guess
+    guessedNumbers.push(userGuess);
 
-playAgainBtn.addEventListener('click', () => {
-        guessed_number_are = [];
-        chances = 3;
-        guessLowHigh.style.display = 'none';
-        no_of_chances.style.marginTop = '25px';
-        no_of_chances.innerHTML = `No of chances: 3`;
-        container.style.display = 'block';
-        resultBox.style.display = 'none';
-        guessed_number.innerHTML = `Guessed number are: -----`;
-        generateRandomNumber();
-        console.log(randomNum)
-});
+    // Display previous guesses
+    guessedNumbersDisplay.textContent =
+        `Guessed numbers are: ${guessedNumbers.join(', ')}`;
+
+    // Check if the guess is correct
+    if (userGuess === randomNumber) {
+        endGame('You Win the game! 🥳');
+        return;
+    }
+
+    // Wrong guess
+    chances--;
+
+    // Display remaining chances
+    noOfChances.textContent = `No of chances: ${chances}`;
+    noOfChances.style.marginTop = '9px';
+
+    // Tell user whether the guess was high or low
+    guessLowHigh.style.display = 'block';
+
+    if (userGuess > randomNumber) {
+        guessLowHigh.textContent = 'Your guess is high!';
+    } else {
+        guessLowHigh.textContent = 'Your guess is low!';
+    }
+
+    // Check if the player has used all chances
+    if (chances === 0) {
+        endGame('You lost the game! 🙁');
+    }
+}
+
+
+// -----------------------------
+// End Game
+// -----------------------------
+
+function endGame(message) {
+    container.style.display = 'none';
+    resultBox.style.display = 'block';
+    gameResult.textContent = message;
+}
+
+
+// -----------------------------
+// Reset Game
+// -----------------------------
+
+function resetGame() {
+
+    // Reset game state
+    guessedNumbers = [];
+    chances = 3;
+
+    // Generate a new number
+    generateRandomNumber();
+
+    // Reset input
+    userInput.value = '';
+
+    // Reset UI
+    guessLowHigh.style.display = 'none';
+
+    noOfChances.style.marginTop = '25px';
+    noOfChances.textContent = 'No of chances: 3';
+
+    guessedNumbersDisplay.textContent = 'Guessed numbers are: -----';
+
+    // Show game screen
+    container.style.display = 'block';
+    resultBox.style.display = 'none';
+}
+
+
+// -----------------------------
+// Event Listeners
+// -----------------------------
+
+guessBtn.addEventListener('click', checkGuess);
+
+playAgainBtn.addEventListener('click', resetGame);
+
+
+// -----------------------------
+// Start Game
+// -----------------------------
 
 generateRandomNumber();
-console.log(randomNum);
