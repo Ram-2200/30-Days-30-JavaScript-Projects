@@ -1,131 +1,280 @@
-<!DOCTYPE html>
-<html lang="en">
+```css
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-    <meta
-        name="description"
-        content="A simple Hangman fruit guessing game built with HTML, CSS and JavaScript."
-    >
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
 
-    <link rel="stylesheet" href="Hangman.css">
+    background: orange;
+    font-family: 'Poppins', sans-serif;
+    color: #111;
+}
 
-    <title>Hangman Game</title>
-</head>
+.game-container {
+    width: 330px;
+    padding: 15px;
 
-<body>
-
-    <main class="game-container">
-
-        <!-- Game Header -->
-        <header class="game-header">
-
-            <p class="wrong-guesses" aria-live="polite">
-                Wrong Guesses:
-                <span class="mistake">0</span>
-                of
-                <span class="max-wrong">0</span>
-            </p>
-
-            <button
-                type="button"
-                class="reset-btn"
-                id="reset-btn"
-            >
-                Reset
-            </button>
-
-        </header>
+    background: white;
+    border-radius: 6px;
+}
 
 
-        <!-- Hangman Illustration -->
-        <section
-            class="hangman-body"
-            aria-label="Hangman drawing"
-        >
-            <span class="hangman-part base"></span>
-            <span class="hangman-part pillar"></span>
-            <span class="hangman-part beam"></span>
-            <span class="hangman-part rope"></span>
+/* Header */
 
-            <span class="hangman-part head"></span>
-            <span class="hangman-part body"></span>
-            <span class="hangman-part left-arm"></span>
-            <span class="hangman-part right-arm"></span>
-            <span class="hangman-part left-leg"></span>
-            <span class="hangman-part right-leg"></span>
-        </section>
+.game-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 
+.wrong-guesses {
+    font-size: 12px;
+}
 
-        <!-- Word Section -->
-        <section class="guess-word" aria-label="Word to guess">
+.mistake,
+.max-wrong {
+    font-weight: 600;
+}
 
-            <p class="word-hint">
-                Guess the fruit name
-            </p>
+.reset-btn,
+.game-btn {
+    border: 2px solid #111;
+    border-radius: 4px;
+    background: orange;
+    color: #111;
+    font-family: inherit;
+    cursor: pointer;
+}
 
-            <p
-                class="word-spotlight"
-                id="word-spotlight"
-                aria-live="polite"
-                aria-label="Current word"
-            ></p>
-
-        </section>
+.reset-btn {
+    padding: 3px 8px;
+    font-size: 12px;
+}
 
 
-        <!-- Keyboard -->
-        <section
-            class="keyboard-section"
-            aria-label="Letter keyboard"
-        >
-            <div
-                class="keyboard-box"
-                id="keyboard-box"
-            ></div>
-        </section>
+/* Hangman */
 
-    </main>
+.hangman-body {
+    position: relative;
+    width: 220px;
+    height: 150px;
+    margin: 20px auto;
+}
+
+.hangman-part {
+    position: absolute;
+    display: none;
+    background: #111;
+}
+
+.base {
+    display: block;
+    width: 70px;
+    height: 3px;
+    left: 20px;
+    bottom: 5px;
+}
+
+.pillar {
+    display: block;
+    width: 3px;
+    height: 125px;
+    left: 35px;
+    bottom: 5px;
+}
+
+.beam {
+    display: block;
+    width: 70px;
+    height: 3px;
+    left: 35px;
+    top: 20px;
+}
+
+.rope {
+    display: block;
+    width: 3px;
+    height: 18px;
+    left: 102px;
+    top: 20px;
+}
+
+.head {
+    width: 35px;
+    height: 35px;
+    left: 86px;
+    top: 38px;
+
+    border: 3px solid #111;
+    border-radius: 50%;
+    background: white;
+}
+
+.body {
+    width: 3px;
+    height: 40px;
+    left: 102px;
+    top: 70px;
+}
+
+.left-arm,
+.right-arm,
+.left-leg,
+.right-leg {
+    width: 3px;
+    height: 30px;
+    transform-origin: top;
+}
+
+.left-arm {
+    left: 102px;
+    top: 70px;
+    transform: rotate(45deg);
+}
+
+.right-arm {
+    left: 102px;
+    top: 70px;
+    transform: rotate(-45deg);
+}
+
+.left-leg {
+    left: 102px;
+    top: 108px;
+    transform: rotate(35deg);
+}
+
+.right-leg {
+    left: 102px;
+    top: 108px;
+    transform: rotate(-35deg);
+}
 
 
-    <!-- Game Result -->
-    <section
-        class="result-box"
-        id="result-box"
-        aria-live="assertive"
-        aria-hidden="true"
-    >
+/* Word */
 
-        <div class="result-content">
+.guess-word {
+    text-align: center;
+    margin-bottom: 15px;
+}
 
-            <h1 class="message">
-                You Win!
-            </h1>
+.word-hint {
+    font-size: 12px;
+    color: #555;
+}
 
-            <p class="result-text">
-                The word was
-                <strong class="result-answer">
-                    Javascript
-                </strong>
-            </p>
+.word-spotlight {
+    margin-top: 8px;
+    min-height: 25px;
 
-            <button
-                type="button"
-                class="game-btn"
-                id="new-game-btn"
-            >
-                New Game
-            </button>
-
-        </div>
-
-    </section>
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 3px;
+}
 
 
-    <script src="Hangman.js"></script>
+/* Keyboard */
 
-</body>
+.keyboard-box {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 6px;
+}
 
-</html>
+.keyboard-btns {
+    width: 28px;
+    height: 28px;
+
+    border: 1px solid #111;
+    border-radius: 4px;
+
+    background: white;
+    color: #111;
+
+    font-family: inherit;
+    font-size: 13px;
+
+    cursor: pointer;
+}
+
+.keyboard-btns:hover {
+    background: #111;
+    color: white;
+}
+
+.keyboard-btns:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+
+/* Result */
+
+.result-box {
+    position: fixed;
+    inset: 0;
+
+    display: none;
+    justify-content: center;
+    align-items: center;
+
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.result-box.show {
+    display: flex;
+}
+
+.result-content {
+    width: 330px;
+    padding: 40px 20px;
+
+    background: white;
+    border-radius: 6px;
+
+    text-align: center;
+}
+
+.message {
+    margin-bottom: 12px;
+    font-size: 24px;
+}
+
+.result-text {
+    margin-bottom: 20px;
+    font-size: 15px;
+}
+
+.result-answer {
+    font-weight: 600;
+}
+
+.game-btn {
+    padding: 8px 15px;
+    font-size: 13px;
+}
+
+
+/* Mobile */
+
+@media (max-width: 400px) {
+
+    body {
+        padding: 10px;
+    }
+
+    .game-container,
+    .result-content {
+        width: 100%;
+        max-width: 330px;
+    }
