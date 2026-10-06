@@ -1,43 +1,131 @@
-         <!DOCTYPE html>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="Hangman.css">
-        <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="description"
+        content="A simple Hangman fruit guessing game built with HTML, CSS and JavaScript."
+    >
+
+    <link rel="stylesheet" href="Hangman.css">
+
+    <title>Hangman Game</title>
 </head>
 
 <body>
-<div class="container">
-<span class="wrong-guesses">Wrong Guesses : <span class="mistake" style="font-weight:600">0</span> of <span class="max-wrong" style="font-weight:600"></span></span>
-<button class="reset-btn" onclick="reset()">Reset</button>
- <div class="hangman-body">
-   <span class="base"></span> <!--Base--> 
-   <span class="pillar"></span> <!--Pillar-->         
-   <span></span> 
-   <span></span>   
-   <span class="face"></span> <!--Face--> 
-   <span class="stomach"></span> <!--Stomach--> 
-   <span class="hand-one"></span> <!--Hand--> 
-   <span class="hand-two"></span> <!--Hand--> 
-   <span id="leg-one"></span> <!--Legs--> 
-   <span id="leg-two"></span> <!--Legs--> 
-</div>   
 
-<div class="guess-word">
- <p>Guess the fruit name</p> 
- <span class="wordSpotlight"></span>
-</div>
-<div class="keyboard-box"></div>
-</div>
+    <main class="game-container">
 
-<div class="result-box">
- <h1 class="message">You Win!</h1>
- <span>The word was <span class="result-answer">Javascript</span></span>
- <button class="new game-btn" onclick="newGame()">NEW GAME</button>
-</div>
-<script src="Hangman.js"></script>
+        <!-- Game Header -->
+        <header class="game-header">
+
+            <p class="wrong-guesses" aria-live="polite">
+                Wrong Guesses:
+                <span class="mistake">0</span>
+                of
+                <span class="max-wrong">0</span>
+            </p>
+
+            <button
+                type="button"
+                class="reset-btn"
+                id="reset-btn"
+            >
+                Reset
+            </button>
+
+        </header>
+
+
+        <!-- Hangman Illustration -->
+        <section
+            class="hangman-body"
+            aria-label="Hangman drawing"
+        >
+            <span class="hangman-part base"></span>
+            <span class="hangman-part pillar"></span>
+            <span class="hangman-part beam"></span>
+            <span class="hangman-part rope"></span>
+
+            <span class="hangman-part head"></span>
+            <span class="hangman-part body"></span>
+            <span class="hangman-part left-arm"></span>
+            <span class="hangman-part right-arm"></span>
+            <span class="hangman-part left-leg"></span>
+            <span class="hangman-part right-leg"></span>
+        </section>
+
+
+        <!-- Word Section -->
+        <section class="guess-word" aria-label="Word to guess">
+
+            <p class="word-hint">
+                Guess the fruit name
+            </p>
+
+            <p
+                class="word-spotlight"
+                id="word-spotlight"
+                aria-live="polite"
+                aria-label="Current word"
+            ></p>
+
+        </section>
+
+
+        <!-- Keyboard -->
+        <section
+            class="keyboard-section"
+            aria-label="Letter keyboard"
+        >
+            <div
+                class="keyboard-box"
+                id="keyboard-box"
+            ></div>
+        </section>
+
+    </main>
+
+
+    <!-- Game Result -->
+    <section
+        class="result-box"
+        id="result-box"
+        aria-live="assertive"
+        aria-hidden="true"
+    >
+
+        <div class="result-content">
+
+            <h1 class="message">
+                You Win!
+            </h1>
+
+            <p class="result-text">
+                The word was
+                <strong class="result-answer">
+                    Javascript
+                </strong>
+            </p>
+
+            <button
+                type="button"
+                class="game-btn"
+                id="new-game-btn"
+            >
+                New Game
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <script src="Hangman.js"></script>
+
 </body>
 
 </html>
