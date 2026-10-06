@@ -1,0 +1,43 @@
+         <!DOCTYPE html>
+<html>
+
+<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="Hangman.css">
+        <title></title>
+</head>
+
+<body>
+<div class="container">
+<span class="wrong-guesses">Wrong Guesses : <span class="mistake" style="font-weight:600">0</span> of <span class="max-wrong" style="font-weight:600"></span></span>
+<button class="reset-btn" onclick="reset()">Reset</button>
+ <div class="hangman-body">
+   <span class="base"></span> <!--Base--> 
+   <span class="pillar"></span> <!--Pillar-->         
+   <span></span> 
+   <span></span>   
+   <span class="face"></span> <!--Face--> 
+   <span class="stomach"></span> <!--Stomach--> 
+   <span class="hand-one"></span> <!--Hand--> 
+   <span class="hand-two"></span> <!--Hand--> 
+   <span id="leg-one"></span> <!--Legs--> 
+   <span id="leg-two"></span> <!--Legs--> 
+</div>   
+
+<div class="guess-word">
+ <p>Guess the fruit name</p> 
+ <span class="wordSpotlight"></span>
+</div>
+<div class="keyboard-box"></div>
+</div>
+
+<div class="result-box">
+ <h1 class="message">You Win!</h1>
+ <span>The word was <span class="result-answer">Javascript</span></span>
+ <button class="new game-btn" onclick="newGame()">NEW GAME</button>
+</div>
+<script src="Hangman.js"></script>
+</body>
+
+</html>
