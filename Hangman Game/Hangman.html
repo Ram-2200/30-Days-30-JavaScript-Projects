@@ -1,43 +1,280 @@
-         <!DOCTYPE html>
-<html>
+```css
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
 
-<head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="Hangman.css">
-        <title></title>
-</head>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-<body>
-<div class="container">
-<span class="wrong-guesses">Wrong Guesses : <span class="mistake" style="font-weight:600">0</span> of <span class="max-wrong" style="font-weight:600"></span></span>
-<button class="reset-btn" onclick="reset()">Reset</button>
- <div class="hangman-body">
-   <span class="base"></span> <!--Base--> 
-   <span class="pillar"></span> <!--Pillar-->         
-   <span></span> 
-   <span></span>   
-   <span class="face"></span> <!--Face--> 
-   <span class="stomach"></span> <!--Stomach--> 
-   <span class="hand-one"></span> <!--Hand--> 
-   <span class="hand-two"></span> <!--Hand--> 
-   <span id="leg-one"></span> <!--Legs--> 
-   <span id="leg-two"></span> <!--Legs--> 
-</div>   
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
 
-<div class="guess-word">
- <p>Guess the fruit name</p> 
- <span class="wordSpotlight"></span>
-</div>
-<div class="keyboard-box"></div>
-</div>
+    background: orange;
+    font-family: 'Poppins', sans-serif;
+    color: #111;
+}
 
-<div class="result-box">
- <h1 class="message">You Win!</h1>
- <span>The word was <span class="result-answer">Javascript</span></span>
- <button class="new game-btn" onclick="newGame()">NEW GAME</button>
-</div>
-<script src="Hangman.js"></script>
-</body>
+.game-container {
+    width: 330px;
+    padding: 15px;
 
-</html>
+    background: white;
+    border-radius: 6px;
+}
+
+
+/* Header */
+
+.game-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.wrong-guesses {
+    font-size: 12px;
+}
+
+.mistake,
+.max-wrong {
+    font-weight: 600;
+}
+
+.reset-btn,
+.game-btn {
+    border: 2px solid #111;
+    border-radius: 4px;
+    background: orange;
+    color: #111;
+    font-family: inherit;
+    cursor: pointer;
+}
+
+.reset-btn {
+    padding: 3px 8px;
+    font-size: 12px;
+}
+
+
+/* Hangman */
+
+.hangman-body {
+    position: relative;
+    width: 220px;
+    height: 150px;
+    margin: 20px auto;
+}
+
+.hangman-part {
+    position: absolute;
+    display: none;
+    background: #111;
+}
+
+.base {
+    display: block;
+    width: 70px;
+    height: 3px;
+    left: 20px;
+    bottom: 5px;
+}
+
+.pillar {
+    display: block;
+    width: 3px;
+    height: 125px;
+    left: 35px;
+    bottom: 5px;
+}
+
+.beam {
+    display: block;
+    width: 70px;
+    height: 3px;
+    left: 35px;
+    top: 20px;
+}
+
+.rope {
+    display: block;
+    width: 3px;
+    height: 18px;
+    left: 102px;
+    top: 20px;
+}
+
+.head {
+    width: 35px;
+    height: 35px;
+    left: 86px;
+    top: 38px;
+
+    border: 3px solid #111;
+    border-radius: 50%;
+    background: white;
+}
+
+.body {
+    width: 3px;
+    height: 40px;
+    left: 102px;
+    top: 70px;
+}
+
+.left-arm,
+.right-arm,
+.left-leg,
+.right-leg {
+    width: 3px;
+    height: 30px;
+    transform-origin: top;
+}
+
+.left-arm {
+    left: 102px;
+    top: 70px;
+    transform: rotate(45deg);
+}
+
+.right-arm {
+    left: 102px;
+    top: 70px;
+    transform: rotate(-45deg);
+}
+
+.left-leg {
+    left: 102px;
+    top: 108px;
+    transform: rotate(35deg);
+}
+
+.right-leg {
+    left: 102px;
+    top: 108px;
+    transform: rotate(-35deg);
+}
+
+
+/* Word */
+
+.guess-word {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.word-hint {
+    font-size: 12px;
+    color: #555;
+}
+
+.word-spotlight {
+    margin-top: 8px;
+    min-height: 25px;
+
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 3px;
+}
+
+
+/* Keyboard */
+
+.keyboard-box {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 6px;
+}
+
+.keyboard-btns {
+    width: 28px;
+    height: 28px;
+
+    border: 1px solid #111;
+    border-radius: 4px;
+
+    background: white;
+    color: #111;
+
+    font-family: inherit;
+    font-size: 13px;
+
+    cursor: pointer;
+}
+
+.keyboard-btns:hover {
+    background: #111;
+    color: white;
+}
+
+.keyboard-btns:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+
+/* Result */
+
+.result-box {
+    position: fixed;
+    inset: 0;
+
+    display: none;
+    justify-content: center;
+    align-items: center;
+
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.result-box.show {
+    display: flex;
+}
+
+.result-content {
+    width: 330px;
+    padding: 40px 20px;
+
+    background: white;
+    border-radius: 6px;
+
+    text-align: center;
+}
+
+.message {
+    margin-bottom: 12px;
+    font-size: 24px;
+}
+
+.result-text {
+    margin-bottom: 20px;
+    font-size: 15px;
+}
+
+.result-answer {
+    font-weight: 600;
+}
+
+.game-btn {
+    padding: 8px 15px;
+    font-size: 13px;
+}
+
+
+/* Mobile */
+
+@media (max-width: 400px) {
+
+    body {
+        padding: 10px;
+    }
+
+    .game-container,
+    .result-content {
+        width: 100%;
+        max-width: 330px;
+    }
