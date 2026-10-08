@@ -1,0 +1,56 @@
+<!--Javascriptpro_-->
+<!--Dont forget to follow me on github,codepen and instagram.-->
+<!DOCTYPE html>
+<html>
+
+<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+        <link rel="stylesheet" href="Translator.css">
+        <title></title>
+</head>
+
+<body>
+<div class="container">
+ <div class="select-box">
+ <div class="from-input-box">
+   <input type="text" class="from-input" value="en-GB" readonly> 
+    <i class="material-icons">expand_more</i>
+ </div> 
+ <div class="switch-btn">
+            <i class="material-icons">repeat</i>
+ </div>
+ <div class="to-input-box">
+    <input type="text" class="to-input" value="hi-IN" readonly> 
+    <i class="material-icons">expand_more</i>
+ </div>
+ </div>   
+ <div class="from-options">
+         <!--Insert all countries code here-->
+ </div>
+ <div class="to-options">
+         <!--Insert all countries code here-->
+ </div>
+  <div class="from-text-box box">
+          <textarea name="" id="" cols="30" rows="10" placeholder="Enter text"></textarea>
+          <div class="btns">
+                  <i class="material-icons copy-btn" onclick="copyFromText()">content_copy</i>
+                  <i class="material-icons from-speak" onclick="speakFromText()">volume_up</i>
+          </div>
+  </div>
+  <div class="to-text-box box">
+          <textarea name="" id="" cols="30" rows="10" placeholder="Translation" readonly></textarea>
+          <div class="btns">
+                  <i class="material-icons copy-btn" onclick="copyToText()">content_copy</i>
+                  <i class="material-icons from-speak" onclick="speakToText()">volume_up</i>
+          </div>
+  </div>
+</div>
+<!--Countries.js-->
+<script src="countries.js"></script>
+<script src="Translator.js"></script>
+</body>
+
+</html>
