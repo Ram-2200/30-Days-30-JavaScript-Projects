@@ -1,0 +1,171 @@
+/*Javascriptpro_*/
+/*Dont forget to follow me on github,instagram and codepen.*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+*{
+margin:0; 
+padding:0;
+box-sizing:border-box;
+}    
+
+body{
+background:#F0F0F0;
+font-family: 'poppins', sans-serif;
+}
+
+.container{
+padding:20px;  
+width:380px;
+background:#252528;
+position:absolute;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+border-radius:7px;
+padding-bottom:30px;
+padding-top:30px;
+}
+
+.container .search-box{
+height:45px; 
+width:100%;
+border-radius:3px;
+display:flex;
+align-items:center;
+padding:5px;
+}
+
+.container .search-box input{
+all:unset;  
+height:45px;
+width:215px;
+font-size:15px;
+padding-left:18px;
+border-radius:5px;
+background:#121214;
+color:white;
+}
+
+.container .search-box button{
+all:unset;  
+height:43px;
+width:100px;
+display:flex;
+align-items:center;
+justify-content:center;
+background:#F00000;
+border-radius:3px;
+font-size:14px;
+margin-left:8px;
+color:white;
+cursor:pointer;
+}
+
+.container .result-box{
+margin-top:5px;
+padding:1px;
+}
+
+.container .result-box .img-box{
+height:180px;
+width:130px;
+border-radius:5px;
+margin:auto;
+margin-top:20px;
+position:relative;
+left:5px;
+}
+
+.container .result-box .img-box img{
+height:180px;
+width:130px;
+border-radius:5px;
+}
+
+.container .result-box .movie-title{
+text-align:center;
+color:white;
+font-size:16px;
+margin-top:5px;
+margin-left:11px;
+}
+
+.container .result-box .rating{
+font-size:11px;
+height:18px;
+width:60px;
+display:flex;
+align-items:center;
+justify-content:center;
+color:white;
+margin:auto;
+margin-top:10px;
+}
+
+.container .result-box .rating i{
+padding-right:5px;       
+font-size:14px;
+color:#FFFF00;
+}
+
+.container .result-box .details{
+font-size:15px;       
+color:grey;
+text-align:center;
+margin-top:8px;
+}
+
+.Genre{
+display: -webkit-box;
+display: -ms-flexbox;
+display: flex;
+-ms-flex-pack: distribute;
+justify-content: space-around;      
+margin-top:7px;
+}
+
+.Genre div{
+border: 1px solid #a0a0a0;
+font-size:.7em;
+padding: 0.2em 1.6em;
+border-radius: 0.4em;
+font-weight: 300; 
+color:white;
+transition:all .3s;
+cursor:pointer;
+}
+
+.Genre div:hover{
+background:#F00000;
+border-color:#F00000;
+transition:all .3s;
+}
+
+.container .result-box .plot{
+margin-top:25px;
+}
+
+.container .result-box .cast{
+margin-top:8px;        
+}
+
+.container .result-box .plot h2,.container .result-box .cast h2{
+font-size:17px;  
+color:white;
+}
+
+.container .result-box .plot span,.container .result-box .cast span{
+font-size:13px;
+color:grey;
+}
+
+.message{
+text-align:center;
+color:white;
+margin-top:15px;
+font-size:17px;
+}
+
+::selection{
+background:rgb(100, 149, 237,0.8); 
+color:white;
+}
