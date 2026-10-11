@@ -1,0 +1,52 @@
+<!--Javascriptpro_-->
+<!--Dont forget to follow me on github,codepen and instagram.-->   
+<!DOCTYPE html>
+<html>
+
+<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!--Dont forget to add these cdn in head tag-->
+        <!--Font awesome icon cdn-->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"> 
+        <!--Material Icons Cdn-->
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <!--Stylesheet-->
+        <link rel="stylesheet" href="MusicPlayer.css">
+        <title></title>
+</head>
+
+<body>
+<div class="container">
+  <div class="music-info">
+       <h4 class="artist-name">Artist: <span class="artist">Passenger</span></h4>
+       <h4 class="song-name">Song: <span class="song">Let Her Go</span></h4>     
+  </div>     
+  <div class="img-box"><img src="" alt=""></div>
+  <div class="btns-box">
+    <button class="prev-btn"><i class="fa-solid fa-backward-step"></i></button>  
+    <button class="play-pause-btn play"><i class="fa-solid fa-play"></i></button>
+    <button class="next-btn"><i class="fa-solid fa-forward-step"></i></button>
+  </div>
+  <div class="waveform-box">
+    <span class="current-time">0:00</span>
+    <div id="waveform"></div>
+    <span class="total-time">0:00</span>
+  </div>
+    <div class="volume-box">
+     <i class="material-icons volume-icon">
+             volume_up</i> 
+      <span><i class="material-icons volume-btn volume-decre">remove</i></span>
+      <input type="range" min="0" max="1" step="0.1">
+      <span><i class="material-icons volume-btn volume-incre">add</i></span>
+   </div>
+</div>
+<!--Wavesurfer Api Cdn-->
+<script src="https://unpkg.com/wavesurfer.js"></script>
+<!--Data.js-->
+<script src="Data.js"></script>
+<!--Script-->
+<script src="MusicPlayer.js"></script>
+</body>
+
+</html>
