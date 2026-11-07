@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+*{
+margin:0;  
+padding:0;
+box-sizing:border-box;
+}  
+
+body{
+background:#9370DB;
+font-family: 'poppins', sans-serif;
+}
+
+.container{
+height:280px;  
+width:330px;
+background:white;
+position:absolute;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+border-radius:7px;
+}
+
+.container .btns {
+height:100px;  
+width:100%;
+position:absolute;
+bottom:0;
+}
+
+.container .btns div{
+height:80px; 
+width:80px;
+float:left;
+text-align:center;
+cursor:pointer;
+margin-left:10px;
+position:relative;
+left:25px;
+}
+
+.container .btns div i{
+font-size:33px;
+color:#9370DB;
+margin-top:5px;
+}
+
+.container .btns div p{
+font-size:11px; 
+position:relative;
+top:4px;
+color:#9370DB;
+}
+
+.container .choices{
+height:130px; 
+width:100%;
+padding:30px;
+display:flex;
+align-items:center;
+}
+
+.container .choices div{
+font-size:75px;
+color:#663399;
+}
+
+.container .choices div:nth-child(1){
+transform:rotate(90deg);      
+transition:all .2s;
+}
+
+.container .choices div:nth-child(2){
+transform:rotate(270deg) scaleX(-1);  
+position:absolute;
+right:30px;
+transition:all .2s;
+}
+
+
+.container .choices .user-choice .fa-hand-scissors{
+transform:rotate(-270deg) scaleY(-1);       
+}
+
+.container .choices .computer-choice .fa-hand-scissors{
+transform:rotate(-80deg) scaleX(-1);      
+}
+
+.container .choices h4{
+position:absolute; 
+left:50%;
+transform:translate(-50%,-50%);
+font-size:20px;
+margin-top:150px;
+}
+
+.container .choices .user-choice.user-icon-animate{
+animation:userIcon 2s linear infinite; 
+}
+
+.container .choices .computer-choice.computer-icon-animate{
+animation:computerIcon 2s linear infinite; 
+}
+
+@keyframes userIcon{
+0%{
+transform:rotate(50deg);     
+}50%{
+transform:rotate(125deg);       
+}100%{
+transform:rotate(50deg);     
+}    
+}
+
+@keyframes computerIcon{
+0%{
+transform:rotate(-50deg) scaleX(-1);       
+}50%{
+transform:rotate(-125deg) scaleX(-1);      
+}100%{
+transform:rotate(-50deg) scaleX(-1);       
+}      
+}
+
+::selection{
+color:white;        
+background:#9370DB;
+}
