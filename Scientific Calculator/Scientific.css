@@ -1,0 +1,140 @@
+/*Javascriptpro_*/
+/*Dont forget to follow me on github,instagram and codepen.*/
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500&display=swap');
+*{
+margin:0;  
+padding:0;
+box-sizing:border-box;
+}    
+
+body{
+background:#F0EFF5;  
+font-family: 'Quicksand', sans-serif; 
+}
+
+.container{
+padding:20px;
+width:360px;
+background:#1B1E27;
+position:absolute;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+border-radius:13px;
+overflow:hidden;
+}
+
+.container .input-box{
+height:160px; 
+width:100%;
+}
+
+.container .btns-box{
+height:360px;       
+}
+
+.container .btns-box button{
+all:unset;  
+height:60px;
+width:64px;
+background:#262930;
+color:white;
+display:flex;
+align-items:center;
+justify-content:center;
+border-radius:7px;
+float:left;
+margin-left:12px;
+margin-top:10px;
+cursor:pointer;
+position:relative;
+left:14px;
+font-size:17px;
+font-weight:600;
+}
+
+.container .btns-box .btn.no-btn{
+pointer-events:none;        
+}
+
+.container .btns-box .with-bg-btn{
+background:#1BB668;        
+}
+
+.container .input-box input{
+all:unset;
+height:58px;
+width:317px;
+position:relative;
+top:70px;
+text-align:right;
+font-size:20px;
+color:white;
+}
+
+.container .input-box .input-value{
+height:30px;
+font-size:25px;
+}
+
+.container .input-box .result{
+font-weight:600;    
+font-size:39px;
+}
+
+.container .scientific-btns{
+height:340px;        
+width:250px;
+border-radius:7px;
+padding:15px;
+margin-left:8px;
+position:absolute;
+bottom:30px;
+left:-225px;
+transition:all .2s;
+background:#1BB668;        
+}
+
+.container .scientific-btns.active{
+left:5px;       
+}
+
+.container .scientific-btns .scien-btn{
+all:unset;        
+height:35px;
+width:45px;
+float:left;
+margin-left:15px;
+display:flex;
+justify-content:center;
+align-items:center;
+color:white;
+margin-top:30px;
+font-size:21px;
+margin-left:15px;
+position:relative;
+top:-13px;
+cursor:pointer;
+}
+
+.container .scientific-btns .back-btn{
+height:60px;       
+width:85px;
+border-top-right-radius:30px;
+border-bottom-right-radius:30px;
+background:#FCBA04;
+position:absolute;
+right:-75px;
+bottom:0px;
+display:flex;
+justify-content:center;
+align-items:center;
+cursor:pointer;
+color:white;
+background:#1BB668;        
+}
+
+::selection{
+background:rgb(100, 149, 237,0.8); 
+color:white;
+}

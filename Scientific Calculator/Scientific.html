@@ -1,0 +1,62 @@
+<!--Javascriptpro_-->
+<!--Dont forget to follow me on github,codepen and instagram.-->
+<!DOCTYPE html>
+<html>
+
+<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"> 
+        <link rel="stylesheet" href="Scientific.css">
+        <title></title>
+</head>
+
+<body>
+<div class="container">
+ <div class="input-box">
+  <input type="text" class="input-value" placeholder="0" value="" readonly>
+  <input type="text" class="result" value="" placeholder="0" readonly>
+ </div>   
+ <div class="btns-box">
+      <button class="with-bg-btn" id="ac" onclick="input.value = ''; result.value = '0' ">AC</button>
+      <button class="with-bg-btn" id="del-btn" onclick="backSpace()"><i class="fa-solid fa-delete-left"></i></button>
+      <button class="btn with-bg-btn">%</button>
+      <button class="btn with-bg-btn">÷</button>
+      <button class="btn">1</button>
+      <button class="btn">2</button>
+      <button class="btn">3</button>
+      <button class="btn with-bg-btn">×</button>
+      <button class="btn">4</button>
+      <button class="btn">5</button>
+      <button class="btn">6</button>
+      <button class="btn with-bg-btn">-</button>
+      <button class="btn">7</button>
+      <button class="btn">8</button>
+      <button class="btn">9</button>
+      <button class="btn with-bg-btn">+</button>
+      <button class="btn no-btn"></button>
+      <button class="btn">0</button>
+      <button class="btn">.</button>
+      <button class="btns with-bg-btn" onclick="calculate()">=</button>  
+ </div>
+  <div class="scientific-btns">
+               <button class="scien-btn" onclick="sin()">sin</button>
+           <button class="scien-btn" onclick="cos()">cos</button>
+           <button class="scien-btn" onclick="tan()">tan</button>
+           <button class="scien-btn" onclick="fact()">x!</button>
+           <button class="scien-btn" onclick="pi()">π</button>
+           <button class="scien-btn" onclick="log()">log</button>
+           <button class="scien-btn btn">(</button>
+           <button class="scien-btn btn">)</button>
+           <button class="scien-btn" onclick="root()">√</button>
+           <button class="scien-btn" onclick="e()">e</button>
+           <button class="scien-btn" onclick="pow()">x<span style="position: relative; bottom: .4em; right: .1em;">y</span></button>
+           <div class="back-btn">
+               <i class="fa-solid fa-chevron-right"></i>
+           </div>         
+  </div>
+</div>
+<script src="Scientific.js"></script>
+</body>
+
+</html>
