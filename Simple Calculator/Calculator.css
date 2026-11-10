@@ -1,0 +1,100 @@
+/*Javascriptpro_*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+*{
+margin:0;   
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+background:#494E54;
+font-family: 'poppins', sans-serif;
+}
+
+.container{
+padding:10px; 
+background:#292C31;
+height:600px;
+width:330px;
+border-radius:20px;
+position:absolute;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+overflow:hidden;
+box-shadow: rgba(17, 17, 26, 0.05) 0px 4px 16px, rgba(17, 17, 26, 0.05) 0px 8px 32px;
+}
+
+.container .input-box{
+height:200px;
+width:100%;
+position:absolute;
+top:0;
+left:0;
+padding:20px;
+overflow-x:scroll;
+}
+
+.container .input-box .result{
+color:white;   
+font-size:43px;
+position:absolute;
+bottom:0;
+right:25px;
+}
+
+.container.light .input-box .result{
+color:black;       
+}
+
+.container .input-box input{
+all:unset; 
+color:dimgrey;
+position:absolute;
+right:25px;
+bottom:60px;
+text-align:right;
+font-size:24px;
+}
+
+.container .btns-box{
+position:absolute;
+left:0;
+top:200px;
+width:100%;
+padding:10px;
+padding-left:14px;
+}
+
+.container .btns-box .btn,.container .btns-box .btns,.container .btns-box #ac,.container .btns-box #del-btn{
+all:unset;        
+all:unset;   
+width:60px;
+height:60px;
+float:left;
+color:white;
+display:flex;
+justify-content:center;
+align-items:center;
+margin-left:12.5px;
+margin-top:10px;
+border-radius:7px;
+cursor:pointer;
+font-weight:600;
+font-size:21px;
+}
+
+
+.container .btns-box .btn,.container .btns-box .btns,.container .btns-box #ac,.container .btns-box #del-btn{
+background-color:#323337;
+box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+}
+
+.container .btns-box .with-bg-btn{
+background:#30AD6B;
+}
+
+::selection{
+background:rgb(100, 149, 237,0.8); 
+color:white;
+}

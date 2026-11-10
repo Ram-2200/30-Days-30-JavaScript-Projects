@@ -1,0 +1,48 @@
+<!--Javascriptpro_-->
+<!DOCTYPE html>
+<html>
+
+<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"> 
+        <link rel="stylesheet" href="Calculator.css">
+        <title></title>
+</head>
+
+<body>
+ <div class="container">
+  <div class="input-box">
+    <input type="text" class="user-input" placeholder="0" readonly>
+    <h3 class="result">0</h3>  
+  </div>     
+  <div class="btns-box">
+     <button class="with-bg-btn" id="ac" onclick="input.value = ''; result.innerHTML = '0' ">AC</button>   
+     <button class="with-bg-btn" id="del-btn" onclick="backSpace()"><i class="fa-solid fa-delete-left"></i></button>   
+     <button class="btn with-bg-btn">%</button>   
+     <button class="btn with-bg-btn">÷</button>
+     <button class="btn">1</button>  
+     <button class="btn">2</button> 
+     <button class="btn">3</button>   
+     <button class="btn with-bg-btn">×</button>
+     <button class="btn">4</button>   
+     <button class="btn">5</button>   
+     <button class="btn">6</button>   
+     <button class="btn with-bg-btn">-</button>
+     <button class="btn">7</button>
+     <button class="btn">8</button>
+     <button class="btn">9</button>
+     <button class="btn with-bg-btn">+</button>  
+     <button class="btn">.</button>
+     <button class="btn">0</button>
+     <button class="btn">00</button>
+     <button class="btns with-bg-btn" onclick="calculate()">=</button>
+  </div>
+</div>
+<script src="Calculator.js"></script>
+<script>
+        
+</script>
+</body>
+
+</html>
