@@ -63,4 +63,4 @@ Build consistently, learn by doing, and turn concepts into working applications.
 
 **Made with ❤️ and JavaScript by [Prateek](https://github.com/Ram-2200)**
 
-[Explore the Repository](https://github.com/Ram-2200/30-Days-30-JavaScript-Projects) · [GitHub Profile](https://github.com/Ram-2200)
+[Explore the Repository](https://github.com/Ram-2200/30-Days-30-JavaScript-Projects) · [GitHub Profile](https://github.com/Ram-2200) ////
